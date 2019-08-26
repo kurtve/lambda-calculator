@@ -1,5 +1,4 @@
 /*
-
 dimensions: approx 470px x 700px
 
 colors:
@@ -11,7 +10,6 @@ special keys: #2061B0
 key drop-shadow: #420108
 display background: #2D2829
 all foreground colors: white
-
 */
 
 .container {
@@ -110,12 +108,11 @@ all foreground colors: white
 
 
 .zero {
-	width: 168px;
+	width: 172px;
 }
 
 
 .operand {
 	background-color: #3DB5E5;
 }
-
 
