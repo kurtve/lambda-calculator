@@ -1,0 +1,60 @@
+/*
+
+dimensions: approx 470px x 700px
+
+colors:
+calculator background: #BB1233
+grey border: #808080
+digit keys: #113C78
+function keys: #3DB5E5
+special keys: #2061B0
+key drop-shadow: #420108
+display background: #2D2829
+all foreground colors: white
+
+*/
+
+.container {
+	margin: 20px auto;
+	width: 470px;
+	min-height: 700px;
+
+	border: 2px solid #808080;
+	border-radius: 10px;
+
+	background-color: #BB1233;
+	color: white;
+
+	display: flex;
+	flex-direction: column;
+}
+
+
+.logo-container {
+	margin: 40px 40px 10px 40px;
+}
+
+
+.display-container {
+	margin: 10px 30px;
+	border-radius: 45px;
+	padding: 10px 20px;
+	/*width: 406px;*/
+	height: 90px;
+	font-size: 4.6rem;
+	background-color: #2D2829;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+
+.keypad-container {
+	margin: 10px 30px;
+
+}
+
+
+

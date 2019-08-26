@@ -1,30 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
-import keys from './data.js';
+// components
+import Logo from "./components/DisplayComponents/Logo.js";
+import Display from "./components/DisplayComponents/Display.js";
+import Keypad from "./components/KeypadComponents/Keypad.js";
 
-// STEP 4 - import the button and display components
-// Don't forget to import any extra css/scss files you build into the correct component
+// keyname <-> character mappings
+import keys from "./data.js";
 
-// Logo has already been provided for you. Do the same for the remaining components
-import Logo from "./components/DisplayComponents/Logo";
+// FSM logic for keypad
+import logicUnit from "./logicUnit.js";
+
 
 function App() {
-  // STEP 5 - After you get the components displaying using the provided data file, write your state hooks here.
-  // Once the state hooks are in place write some functions to hold data in state and update that data depending on what it needs to be doing
-  // Your functions should accept a parameter of the the item data being displayed to the DOM (ie - should recieve 5 if the user clicks on
-  // the "5" button, or the operator if they click one of those buttons) and then call your setter function to update state.
-  // Don't forget to pass the functions (and any additional data needed) to the components as props
 
-  return (
-    <div className="container">
-      <Logo />
-      <div className="App">
-        {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
-        <p>The first digit key is: {keys[0].char}</p>
-      </div>
-    </div>
-  );
+	// the calculator's FSM state consists of 4 elements:
+	// value: the display value
+	// memory: the value in memory for a calculation in progress, if any
+	// operand: the pending operand to be executed once the new value is entered, if any
+	// append: digit presses get appended to display value? (or else they start a new value)
+	const initialFSM = {
+		value: 0,
+		memory: null,
+		operand: null,
+		append: true
+	};
+
+	const [FSM, updateFSM] = useState(initialFSM);
+
+
+	// handle all keypresses by sending them to the logic unit
+	const clickHandler = (keyname) => {
+		const newState = logicUnit(keyname, FSM);
+		updateFSM(newState);
+	};
+
+	return (
+		<div className="container">
+			<Logo />
+			<Display value={FSM.value} />
+			<Keypad keys={keys} handler={clickHandler} />
+		</div>
+	);
 }
 
 export default App;
