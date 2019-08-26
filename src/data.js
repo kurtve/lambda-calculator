@@ -4,120 +4,110 @@
 // file. No real tricks here just be aware of what is in each array
 // and how you'll access the data.
 
-/*
-const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
 
-const operators = [
-  {
-    char: "÷",
-    value: "/"
-  },
-  {
-    char: "×",
-    value: "*"
-  },
-  {
-    char: "−",
-    value: "-"
-  },
-  {
-    char: "+",
-    value: "+"
-  },
-  {
-    char: "=",
-    value: "="
-  }
-];
-
-const specials = ["C", "±", "%"];
-
-export { numbers, operators, specials };
-*/
-
-
-// there is no logical distinction between numbers, operators, and 'special' symbols
-// let's change this up so it make more sense
-
-
-const keys = [
-  {
-    char: "0",
-    name: "digit0"
-  },
+const numberKeys = [
   {
     char: "1",
-    name: "digit1"
+    name: "digit1",
+    class: "number"
   },
   {
     char: "2",
-    name: "digit2"
+    name: "digit2",
+    class: "number"
   },
   {
     char: "3",
-    name: "digit3"
+    name: "digit3",
+    class: "number"
   },
   {
     char: "4",
-    name: "digit4"
+    name: "digit4",
+    class: "number"
   },
   {
     char: "5",
-    name: "digit5"
+    name: "digit5",
+    class: "number"
   },
   {
     char: "6",
-    name: "digit6"
+    name: "digit6",
+    class: "number"
   },
   {
     char: "7",
-    name: "digit7"
+    name: "digit7",
+    class: "number"
   },
   {
     char: "8",
-    name: "digit8"
+    name: "digit8",
+    class: "number"
   },
   {
     char: "9",
-    name: "digit9"
+    name: "digit9",
+    class: "number"
   },
   {
+    char: "0",
+    name: "digit0",
+    class: "number zero"
+  },  {
     char: ".",
-    name: "point"
-  },
+    name: "point",
+    class: "number"
+  }
+];
+
+
+const operandKeys = [
   {
     char: "÷",
-    name: "divide"
+    name: "divide",
+    class: "operand"
   },
   {
     char: "×",
-    name: "times"
+    name: "times",
+    class: "operand"
   },
   {
     char: "−",
-    name: "minus"
+    name: "minus",
+    class: "operand"
   },
   {
     char: "+",
-    name: "plus"
+    name: "plus",
+    class: "operand"
   },
   {
     char: "=",
-    name: "equals"
-  },
+    name: "equals",
+    class: "operand"
+  }
+];
+
+const specialKeys = [
   {
     char: "C",
-    name: "clear"
+    name: "clear",
+    class: "special"
   },
   {
     char: "±",
-    name: "sign"
+    name: "sign",
+    class: "special"
   },
   {
     char: "%",
-    name: "percent"
+    name: "percent",
+    class: "special"
   },
 ];
 
 
-export default keys;
+export { numberKeys, operandKeys, specialKeys };

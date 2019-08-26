@@ -6,8 +6,6 @@ import Logo from "./components/DisplayComponents/Logo.js";
 import Display from "./components/DisplayComponents/Display.js";
 import Keypad from "./components/KeypadComponents/Keypad.js";
 
-// keyname <-> character mappings
-import keys from "./data.js";
 
 // FSM logic for keypad
 import logicUnit from "./logicUnit.js";
@@ -40,7 +38,7 @@ function App() {
 		<div className="container">
 			<Logo />
 			<Display value={FSM.value} />
-			<Keypad keys={keys} handler={clickHandler} />
+			<Keypad handler={clickHandler} />
 		</div>
 	);
 }

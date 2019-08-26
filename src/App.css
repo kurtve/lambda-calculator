@@ -39,7 +39,6 @@ all foreground colors: white
 	margin: 10px 30px;
 	border-radius: 45px;
 	padding: 10px 20px;
-	/*width: 406px;*/
 	height: 90px;
 	font-size: 4.6rem;
 	background-color: #2D2829;
@@ -52,9 +51,71 @@ all foreground colors: white
 
 
 .keypad-container {
-	margin: 10px 30px;
-
+	margin: 10px 30px 20px;
+	display: flex;
+	flex-direction: row;
 }
 
+
+.numbers-and-specials {
+	display: flex;
+	flex-direction: column;
+}
+
+
+.specials {
+	display: flex;
+	flex-direction: row;
+}
+
+
+.numbers {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+
+.operands {
+	display: flex;
+	flex-direction: column;
+}
+
+
+.button {
+	margin: 10px 12px;
+	width: 74px;
+	height: 74px;
+	border-radius: 37px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3.6rem;
+	box-shadow: 0px 5px #420108;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+
+.special {
+	background-color: #2061B0;
+}
+
+
+.number {
+	background-color: #113C78;
+}
+
+
+.zero {
+	width: 168px;
+}
+
+
+.operand {
+	background-color: #3DB5E5;
+}
 
 
