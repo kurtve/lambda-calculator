@@ -19,7 +19,7 @@ function App() {
 	// operand: the pending operand to be executed once the new value is entered, if any
 	// append: digit presses get appended to display value? (or else they start a new value)
 	const initialFSM = {
-		value: 0,
+		value: '0',
 		memory: null,
 		operand: null,
 		append: true
