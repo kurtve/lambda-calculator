@@ -11,7 +11,7 @@ const logicUnit = (keypress, currentFSM) => {
 
 
 	// we'll add some functionality later, but for now just set a random value
-	newValue = Math.floor(Math.random() * 10000);
+	newValue = Math.floor(Math.random() * 10000).toString();
 
 	// we can implement at least one key just to show this function works
 	if (keypress === 'clear') {
