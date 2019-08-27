@@ -74,6 +74,9 @@ const logicUnit = (keypress, currentFSM) => {
 					break;
 				}
 				newValue = newNum.toString();
+				if (newValue.length > maxlen) {
+					newValue = newValue.substring(0, maxlen - 1);
+				}
 			}
 			newMemory = newValue;
 			newOperand = keypress;
@@ -105,6 +108,9 @@ const logicUnit = (keypress, currentFSM) => {
 					break;
 				}
 				newValue = newNum.toString();
+				if (newValue.length > maxlen) {
+					newValue = newValue.substring(0, maxlen - 1);
+				}
 				newMemory = null;
 				newOperand = null;
 			}
